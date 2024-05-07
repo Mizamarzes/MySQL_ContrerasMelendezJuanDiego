@@ -88,18 +88,18 @@ VALUES ( 'French'),
 	
 	
 -- INSERTIONS OF LANGUAGE_COUNTRY
-INSERT INTO Language_country (id_languageCountry, id_country)
-VALUES (1,5),
-		(6,4),
-		(1,6),
-		(1,7),
-		(5,6),
-		(5,1),
-		(6,7),
-		(10,10),
-		(10,10),
-		(2,6);
-
+INSERT INTO Language_country (id_languageCountry, id_country, is_oficial)
+VALUES (1,5,1),
+		(6,4,0),
+		(1,6,1),
+		(1,7,1),
+		(5,6,1),
+		(5,1,0),
+		(6,7,0),
+		(10,10,0),
+		(10,10,0),
+		(2,6,0);
+	
 -- Devolop for Juan Contreras - C.C:1.***.***.782
 
 
