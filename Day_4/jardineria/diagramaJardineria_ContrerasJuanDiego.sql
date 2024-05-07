@@ -8,7 +8,7 @@ CREATE DATABASE jardineria;
 USE jardineria;
 
 -- CREACION TABLA GAMA_PRODUCTO
-CREATE TABLE gama_producto (
+CREATE TABLE IF NOT EXISTS gama_producto (
 	gama VARCHAR(50) PRIMARY KEY,
 	descripcion_texto TEXT,
 	descripcion_html TEXT,
@@ -16,9 +16,9 @@ CREATE TABLE gama_producto (
 );
 
 -- CREACION TABLA PRODUCTO
-CREATE TABLE producto (
+CREATE TABLE IF NOT EXISTS producto (
 	codigo_producto VARCHAR(15) PRIMARY KEY,
-	nombre VARCHAR(15) NOT NULL,
+	nombre VARCHAR(70) NOT NULL,
 	gama VARCHAR(50),
 	dimensiones VARCHAR(25),
 	proveedor VARCHAR(50),
@@ -30,7 +30,7 @@ CREATE TABLE producto (
 );
 
 -- CREACION TABLA OFICINA
-CREATE TABLE oficina (
+CREATE TABLE IF NOT EXISTS oficina (
 	codigo_oficina VARCHAR(10) PRIMARY KEY,
 	ciudad VARCHAR(30) NOT NULL,
 	pais VARCHAR(50) NOT NULL,
@@ -42,7 +42,7 @@ CREATE TABLE oficina (
 )
 
 -- CREACION TABLA EMPLEADO
-CREATE TABLE empleado (
+CREATE TABLE IF NOT EXISTS empleado (
 	codigo_empleado INT(11) PRIMARY KEY,
 	nombre VARCHAR(50) NOT NULL,
 	apellido1 VARCHAR(50) NOT NULL,
@@ -52,15 +52,16 @@ CREATE TABLE empleado (
 	codigo_oficina VARCHAR(10),
 	codigo_jefe INT(11),
 	puesto VARCHAR(50),
-	FOREIGN KEY(codigo_oficina) REFERENCES oficina(codigo_oficina)
+	FOREIGN KEY(codigo_oficina) REFERENCES oficina(codigo_oficina),
+	FOREIGN KEY(codigo_jefe) REFERENCES empleado(codigo_empleado)
 );
 
 -- CREACION TABLA CLIENTE
-CREATE TABLE cliente (
+CREATE TABLE IF NOT EXISTS cliente (
 	codigo_cliente INT(11) PRIMARY KEY,
 	nombre_cliente VARCHAR(50) NOT NULL,
 	nombre_contacto VARCHAR(30),
-	apellido_contacto VARCHAR(40),
+	apellido_contacto VARCHAR(30),
 	telefono VARCHAR(15) NOT NULL,
 	fax VARCHAR(15) NOT NULL,
 	linea_direccion1 VARCHAR(50) NOT NULL,
@@ -75,7 +76,7 @@ CREATE TABLE cliente (
 );
 
 -- CREACION TABLA PEDIDO
-CREATE TABLE pedido (
+CREATE TABLE IF NOT EXISTS pedido (
 	codigo_pedido INT(11) PRIMARY KEY,
 	fecha_pedido DATE NOT NULL,
 	fecha_esperada DATE NOT NULL,
@@ -87,7 +88,7 @@ CREATE TABLE pedido (
 );
 
 -- CREACION TABLA DETALLE_PEDIDO
-CREATE TABLE detalle_pedido (
+CREATE TABLE IF NOT EXISTS detalle_pedido (
 	codigo_pedido INT(11),
 	codigo_producto VARCHAR(15),
 	cantidad INT(11) NOT NULL,
@@ -98,7 +99,7 @@ CREATE TABLE detalle_pedido (
 );
 
 -- CREACION TABLA PAGO
-CREATE TABLE pago(
+CREATE TABLE IF NOT EXISTS pago(
 	codigo_cliente INT(11),
 	forma_pago VARCHAR(40) NOT NULL,
 	id_transaccion VARCHAR(50) PRIMARY KEY,
@@ -107,6 +108,4 @@ CREATE TABLE pago(
 	FOREIGN KEY(codigo_cliente) REFERENCES cliente(codigo_cliente)
 )
 
-
 -- Devolop for Juan Contreras - C.C:1.***.***.782
-
