@@ -97,6 +97,7 @@ CREATE TABLE detalle_pedido (
 	FOREIGN KEY(codigo_producto) REFERENCES producto(codigo_producto)
 );
 
+-- CREACION TABLA PAGO
 CREATE TABLE pago(
 	codigo_cliente INT(11),
 	forma_pago VARCHAR(40) NOT NULL,
