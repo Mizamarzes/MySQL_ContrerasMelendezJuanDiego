@@ -4,7 +4,7 @@
 -- Basado en el archivo jardineria.png
 -- Creacion y uso de la BBDD "jardineria"
 
-CREATE DATABASE jardineria;
+CREATE DATABASE IF NOT EXISTS jardineria;
 USE jardineria;
 
 -- CREACION TABLA GAMA_PRODUCTO
