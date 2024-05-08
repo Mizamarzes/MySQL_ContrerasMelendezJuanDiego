@@ -63,10 +63,11 @@ SELECT codigo_pedido, codigo_cliente, fecha_esperada, fecha_entrega  FROM pedido
 
 -- Utilizando la función ADDDATE de MySQL.
 
-SELECT codigo_pedido, codigo_cliente, fecha_esperada, fecha_entrega  FROM pedido WHERE ADDDATE(fecha_esperada, INTERVAL -2 DAY)   
-
+SELECT codigo_pedido, codigo_cliente, fecha_esperada, fecha_entrega  FROM pedido WHERE ADDDATE(fecha_esperada , INTERVAL -2 DAY)>= fecha_entrega;   
 
 -- Utilizando la función DATEDIFF de MySQL.
+
+
 
 
 -- ¿Sería posible resolver esta consulta utilizando el operador de suma + o resta -?
