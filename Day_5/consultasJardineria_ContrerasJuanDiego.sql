@@ -1,5 +1,5 @@
 -- ###############################
--- ###### EJERCICIO DIA 4 ########
+-- ###### EJERCICIO DIA 5 ########
 -- ###############################
 -- Consultas a la database
 
@@ -67,14 +67,54 @@ SELECT codigo_pedido, codigo_cliente, fecha_esperada, fecha_entrega  FROM pedido
 
 -- Utilizando la función DATEDIFF de MySQL.
 
-
-
+SELECT codigo_pedido, codigo_cliente, fecha_esperada, fecha_entrega  FROM pedido WHERE DATEDIFF(fecha_esperada, fecha_entrega)>=2;
 
 -- ¿Sería posible resolver esta consulta utilizando el operador de suma + o resta -?
 
 
+-- Devuelve un listado de todos los pedidos que fueron en 2009.
+
+-- Devuelve un listado de todos los pedidos que han sido  en el mes de enero de cualquier año.
+
+-- Devuelve un listado con todos los pagos que se realizaron en el año 2008 mediante Paypal. 
+-- Ordene el resultado de mayor a menor.
+
+-- Devuelve un listado con todas las formas de pago que aparecen en la tabla pago. 
+-- Tenga en cuenta que no deben aparecer formas de pago repetidas.
+
+-- Devuelve un listado con todos los productos que pertenecen a la gama Ornamentales 
+-- y que tienen más de 100 unidades en stock. El listado deberá estar ordenado por su precio de 
+-- venta, mostrando en primer lugar los de mayor precio.
+
+-- Devuelve un listado con todos los clientes que sean de la ciudad de Madrid y cuyo representante de ventas tenga el código de empleado 11 o 30.
 
 
+-- ######################### CONSULTAS MULTITABLA(Composicióon interna) ##############################
+-- Resuelva todas las consultas mediante INNER JOIN y NATURAL JOIN.
+
+-- Obtén un listado con el nombre de cada cliente y el nombre y apellido de su representante de ventas.
+
+-- Muestra el nombre de los clientes que hayan realizado pagos junto con el nombre de sus representantes de ventas.
+
+-- Muestra el nombre de los clientes que  hayan realizado pagos junto con el nombre de sus representantes de ventas.
+
+-- Devuelve el nombre de los clientes que han hecho pagos y el nombre de sus representantes junto con la ciudad de la oficina a la que pertenece el representante.
+
+-- Devuelve el nombre de los clientes que  hayan hecho pagos y el nombre de sus representantes 
+-- junto con la ciudad de la oficina a la que pertenece 
+-- el representante.Lista la dirección de las oficinas que tengan clientes en Fuenlabrada.
+
+-- Devuelve el nombre de los clientes y el nombre de sus representantes junto con la ciudad de la oficina 
+-- a la que pertenece el representante.
+
+-- Devuelve un listado con el nombre de los empleados junto con el nombre de sus jefes.
+
+-- Devuelve un listado que muestre el nombre de cada empleados, el nombre de su jefe y 
+-- el nombre del jefe de sus jefe.
+
+-- Devuelve el nombre de los clientes a los que no se les ha entregado a tiempo un pedido.
+
+-- Devuelve un listado de las diferentes gamas de producto que ha comprado cada cliente.
 
 -- Devolop for Juan Contreras - C.C:1.***.***.782
 
