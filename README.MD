@@ -1,0 +1,1 @@
+## ¡Bienvenido a mi repositorio de MySQL! Aquí, he estado en un emocionante viaje aprendiendo sobre MySQL, un potente sistema de gestión de bases de datos relacionales. En este repositorio, encontrarás una colección de scripts SQL que he creado para construir y administrar bases de datos.
