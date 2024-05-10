@@ -79,8 +79,6 @@ INSERT INTO idiomaPais (esoficialID, idiomaID, paisID) VALUES
 (1, 9, 9),  -- Árabe es oficial en Sudáfrica (en algunas regiones)
 (1, 6, 7);  -- Ruso es oficial en algunas partes de India (en algunos contextos)
 
-show tables;
-
 -- Consulta general a ciudad
 select * from ciudad;
 
