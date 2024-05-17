@@ -1,4 +1,8 @@
-show databases;
+-- ###################################
+-- ######### DAY 8 ###################
+-- ###################################
+
+SHOW databases;
 CREATE DATABASE dia8;
 USE dia8;
 
@@ -55,3 +59,6 @@ end//
 delimiter ;
 
 SELECT buscarProducto(Cary, ) FROM 
+
+
+-- Devolop for Juan Contreras - C.C:1.***.***.782
