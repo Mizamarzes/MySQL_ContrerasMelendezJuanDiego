@@ -49,16 +49,18 @@ DROP FUNCTION TotalConIVA;
 SELECT nombre, TotalConIva(Precio, 19) as Precio_con_Iva FROM productos;
 
 -- --------------------------------------------
-
-delimiter //
-CREATE FUNCTION buscarProducto(producto varchar(50), nombre VARCHAR(100))
-returns VARCHAR(255) deterministic
-begin
-	return (select * from productos where nombre=producto);
-end//
-delimiter ;
-
-SELECT buscarProducto(Cary, ) FROM 
+CREATE FUNCTION buscarProducto(nombre_producto VARCHAR(100)) RETURNS VARCHAR(255)
+DETERMINISTIC
+BEGIN
+    DECLARE producto_precio decimal(10,2);
+    DECLARE producto_nombre VARCHAR(100);
+    DECLARE producto_id int;
+    SELECT nombre,id,precio INTO producto_nombre, producto_id,producto_precio
+   		   FROM productos WHERE nombre = nombre_producto LIMIT 1;
+    RETURN CONCAT('id: ',producto_id,' nombre: ', producto_nombre, ' precio: ', producto_precio);
+END;
+DROP FUNCTION buscarProducto;
+SELECT buscarProducto("Cary") AS datos_producto;
 
 
 -- Devolop for Juan Contreras - C.C:1.***.***.782
