@@ -10,19 +10,27 @@
 
 
 -- 1. Lista el primer apellido de todos los empleados.
+SELECT apellido1 FROM empleado
+ORDER BY apellido1;
 
 -- 2. Lista el primer apellido de los empleados eliminando los apellidos que estén
 -- repetidos.
+SELECT DISTINCT apellido1 FROM empleado
+ORDER BY apellido1;
 
 -- 3. Lista todas las columnas de la tabla empleado.
+SELECT * FROM empleado;
 
 -- 4. Lista el nombre y los apellidos de todos los empleados.
+SELECT nombre, apellido1, apellido2 FROM empleado;
 
 -- 5. Lista el identificador de los departamentos de los empleados que aparecen
 -- en la tabla empleado.
+SELECT id_departamento FROM empleado;
 
 -- 6. Lista el identificador de los departamentos de los empleados que aparecen
 -- en la tabla empleado, eliminando los identificadores que aparecen repetidos.
+
 
 -- 7. Lista el nombre y apellidos de los empleados en una única columna.
 
