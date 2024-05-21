@@ -17,6 +17,9 @@ CREATE USER 'pedroLocal'@'localhost' identified by 'pedro123';
 -- Revisar permisos
 SHOW GRANTS FOR 'pedro'@'%';
 
+
+FLUSH PRIVILEGES;
+
 -- Ejemplo tabla
 CREATE TABLE person(
 	id INT PRIMARY KEY,
@@ -42,6 +45,19 @@ SELECT * FROM person;
 -- Asignar permisos
 GRANT SELECT ON dia10.* to 'pedro'@'%';
 
+-- Asignar permisos mas especificos
+GRANT SELECT, INSERT, UPDATE, DELETE ON *.*
+
 -- Revocar permisos
 REVOKE INSERT ON dia10.* FROM 'pedro'@'%';
+
+-- Revocar todos los permisos
+REVOKE ALL PRIVILEGES ON *.* FROM 'pedro'@'172.16.101.132';
+
+-- Revisar procesos 
+SHOW PROCESSLIST;
+
+-- Quitar proceso
+kill 158;
+
 
